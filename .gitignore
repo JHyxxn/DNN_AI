@@ -1,0 +1,50 @@
+# Visual Studio / Visual C++
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio cache/options directory
+.vs/
+.vscode/
+
+## User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+## Backup files
+*_backup.*
+*_new.*
+* copy.*
+
+## Test files (용량 절약)
+간단한_테스트_이미지_만들기.md
+발표용_테스트_수식.txt
+README_TEST_IMAGES.md
+
+## Large model files (DNN 모델 파일)
+*.onnx
+*.pb
+*.caffemodel
+*.weights
+*.cfg
+*.prototxt
+
+## Temporary files
+*.aps
+*.tlog
+*.ilk
+*.pdb
+*.idb
