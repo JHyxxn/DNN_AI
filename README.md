@@ -79,56 +79,56 @@
 ## 시스템 아키텍처
 
 ```
-┌─────────────────────────────────────────┐
-│         Image Input (Mat)               │
+┌───────────────────────────────────────┐
+│         Image Input (Mat)             │
 └──────────────┬────────────────────────┘
                 │
                 ↓
-┌─────────────────────────────────────────┐
-│      Step 1: Image Preprocessing        │
-│  - Grayscale conversion                 │
-│  - Noise removal (Gaussian Blur)        │
-│  - Binarization (OTSU)                  │
-│  - Resize (736x736 for OCR)             │
+┌───────────────────────────────────────┐
+│      Step 1: Image Preprocessing      │
+│  - Grayscale conversion               │
+│  - Noise removal (Gaussian Blur)      │
+│  - Binarization (OTSU)                │
+│  - Resize (736x736 for OCR)           │
 └──────────────┬────────────────────────┘
                 │
                 ↓
-┌─────────────────────────────────────────┐
-│      Step 2: OCR (Text Extraction)     │
-│  - Text Detection (DB Net)              │
-│  - Text Recognition (CRNN)              │
-│  - Formula text: "2 + 3 × 4"           │
+┌───────────────────────────────────────┐
+│      Step 2: OCR (Text Extraction)    │
+│  - Text Detection (DB Net)            │
+│  - Text Recognition (CRNN)            │
+│  - Formula text: "2 + 3 × 4"          │
 └──────────────┬────────────────────────┘
                 │
                 ↓
-┌─────────────────────────────────────────┐
-│      Step 3: Formula Normalization     │
-│  - × → *                                 │
-│  - ÷ → /                                 │
-│  - ² → ^2                                │
-│  - 공백 제거                             │
+┌───────────────────────────────────────┐
+│      Step 3: Formula Normalization    │
+│  - × → *                              │
+│  - ÷ → /                              │
+│  - ² → ^2                             │
+│  - 공백 제거                           │
 └──────────────┬────────────────────────┘
                 │
                 ↓
-┌─────────────────────────────────────────┐
+┌────────────────────────────────────────┐
 │      Step 4: Formula Parsing           │
 │  - Tokenize: ["2", "+", "3", "*", "4"] │
-│  - Build Expression Tree                │
-│  - Handle operator precedence           │
-└──────────────┬────────────────────────┘
+│  - Build Expression Tree               │
+│  - Handle operator precedence          │
+└──────────────┬─────────────────────────┘
                 │
                 ↓
-┌─────────────────────────────────────────┐
-│      Step 5: Expression Evaluation      │
-│  - Evaluate expression tree             │
-│  - Result: 14                           │
+┌───────────────────────────────────────┐
+│      Step 5: Expression Evaluation    │
+│  - Evaluate expression tree           │
+│  - Result: 14                         │
 └──────────────┬────────────────────────┘
                 │
                 ↓
 ┌─────────────────────────────────────────┐
 │      Step 6: Result Visualization       │
-│  - Draw original image                   │
-│  - Display formula text                  │
+│  - Draw original image                  │
+│  - Display formula text                 │
 │  - Display calculation result           │
 └─────────────────────────────────────────┘
 ```
@@ -195,7 +195,7 @@ struct FormulaToken {
 결과 이미지:
 ┌─────────────────────┐
 │ Formula: 2 + 3 × 4  │
-│ Result: 14.00        │
+│ Result: 14.00       │
 │                     │
 │     2 + 3 × 4       │
 │                     │
